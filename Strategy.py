@@ -329,18 +329,3 @@ for i in range(1, 10):
 plt.savefig('p4.svg')
 plt.show()
 plt.figure(figsize=(20, 15))
-for j in range(1, 10):
-    plt.subplot(3, 3, j)
-    plt.plot(maturity_date_cleaned[:-1], np.cumprod(1 + np.array(non_atm[j - 1])), color='royalblue', \
-             linewidth=2)
-    plt.plot(maturity_date_cleaned, np.cumprod(1 + np.array(fund_retuns)), 'r', \
-             linewidth=2)
-    plt.legend(['Option strategy', '50ETF Fund'], fontsize=16)
-
-    plt.xlabel('EPS={}'.format(np.round(0.1 - (j - 1) * 0.01, 2)), fontsize=16)
-    plt.ylabel('Return', fontsize=16)
-    plt.xticks(fontsize=14)
-    plt.yticks(fontsize=14)
-    plt.grid()
-plt.savefig('p5.svg')
-plt.show()
